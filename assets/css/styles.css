@@ -1,0 +1,221 @@
+/* Base Reset & Configuration */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style-position: outside;
+}
+
+:root {
+    --stone-100: hsl(30, 54%, 90%);
+    --stone-150: hsl(30, 18%, 87%);
+    --stone-600: hsl(30, 10%, 34%);
+    --stone-900: hsl(24, 5%, 18%);
+    --brown-800: hsl(14, 45%, 36%);
+    --rose-800: hsl(332, 51%, 32%);
+    --rose-50: hsl(330, 100%, 98%);
+    --padding-40: 2.5em;
+    --section_title-margin-top: 25px;
+    --section_title-margin-bottom: 20px;
+}
+
+/* Font Settings */
+.outfit-regular,
+.outfit-semiBold,
+.outfit-bold,
+li {
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: clamp(0.95rem, 1vw + 0.5rem, 1.125rem);
+}
+
+.outfit-regular,
+li {
+    font-weight: 400;
+}
+
+.outfit-semiBold {
+    font-weight: 600;
+}
+
+.outfit-bold {
+    font-weight: 700;
+}
+
+.young-serif-regular {
+    font-family: "Young Serif", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: clamp(1rem, 1vw + 0.6rem, 1.25rem);
+}
+
+/* Marker Styling */
+::marker {
+    font-weight: 700;
+    color: var(--brown-800);
+}
+
+/* Layout */
+html {
+    display: grid;
+    place-content: center;
+    background-color: var(--stone-100);
+    scroll-behavior: smooth;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+hr {
+    color: var(--stone-150);
+}
+
+/* Image */
+.body_image {
+    max-width: 100%;
+    margin-bottom: var(--padding-40);
+}
+
+/* Main Content */
+main {
+    margin-inline: 2.063em;
+}
+
+.main_header-title {
+    font-size: clamp(2rem, 3vw + 1rem, 3rem);
+    line-height: 1.2;
+    margin-bottom: 0.778em;
+}
+
+.main_paragraph {
+    font-size: clamp(1rem, 1vw + 0.5rem, 1.25rem);
+    margin-bottom: var(--padding-40);
+    line-height: 1.6;
+    color: var(--stone-600);
+}
+
+/* List Styling */
+ul li {
+    position: relative;
+    list-style-type: none;
+    padding-left: 28px;
+    color: var(--stone-600);
+    font-size: clamp(1rem, 1vw + 0.3rem, 1.125rem);
+}
+
+ul li::before {
+    content: "\2022";
+    position: absolute;
+    left: 0;
+    font-size: 1.5em;
+    line-height: 1;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--rose-800);
+}
+
+ul li:not(:last-child),
+ol li:not(:last-child) {
+    margin-bottom: 16px;
+}
+
+ol li {
+    padding-left: 10px;
+    margin-left: 25px;
+    font-size: clamp(1rem, 1vw + 0.3rem, 1.125rem);
+}
+
+/* Span Text Color */
+span {
+    color: var(--stone-900);
+}
+
+/* Preparation Time Section */
+.main_preparation-time {
+    background-color: var(--rose-50);
+    padding: 27px 73px 25px 25px;
+    border-radius: 5px;
+}
+
+.main_preparation-time>h3 {
+    font-size: clamp(1.125rem, 1vw + 0.3rem, 1.375rem);
+    color: var(--rose-800);
+    margin-bottom: 20px;
+}
+
+.main_preparation-time ul {
+    margin-left: 7px;
+}
+
+/* Section Titles */
+.section_title {
+    margin-top: var(--section_title-margin-top);
+    margin-bottom: var(--section_title-margin-bottom);
+    color: var(--brown-800);
+    font-size: clamp(1.5rem, 1.5vw + 0.5rem, 2.25rem);
+}
+
+/* Ingredients & Instructions Sections */
+.main_ingredients-section,
+.main_instructions-section {
+    margin-bottom: 30px;
+}
+
+.main_ingredients-section ul {
+    margin-left: 10px;
+}
+
+.main_ingredients-section li:last-child {
+    line-height: 25px;
+}
+
+.main_instructions-section li {
+    line-height: 25px;
+    font-size: clamp(1rem, 1vw + 0.3rem, 1.125rem);
+}
+
+/* Nutrition Section */
+.nutrition-section_paragraph {
+    color: var(--stone-600);
+    margin-bottom: 10px;
+    font-size: clamp(1rem, 1vw + 0.3rem, 1.125rem);
+}
+
+table {
+    color: var(--stone-600);
+    width: 100%;
+    max-width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: clamp(0.95rem, 0.5vw + 0.6rem, 1.125rem);
+}
+
+table td:nth-child(even) {
+    color: var(--brown-800);
+}
+
+table td {
+    border-bottom: 1px solid var(--stone-100);
+    padding-block: 15px;
+}
+
+@media (min-width: 997px) and (max-width: 2000px) {
+    body {
+        max-width: 736px;
+        margin-block: 75px;
+        border-radius: 20px;
+    }
+
+    img {
+        margin-top: 40px;
+        width: 657px;
+        border-radius: 10px;
+    }
+}
